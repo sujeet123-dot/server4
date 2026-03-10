@@ -130,12 +130,8 @@ app.all('/', (req, res) => {
                     'page_location': window.location.href,
                     'event_callback': function() {
                         // Signal server after GA4 confirms
-                        fetch('/?cid=${clientId}&sid=${sessionId}')
-                            .finally(function() { 
-                                // Clean redirect: window.location.replace is better than .href 
-                                // because it doesn't save the bridge in browser history
-                                window.location.replace("${TARGET_URL}"); 
-                            });
+                        navigator.sendBeacon('/?cid=${clientId}&sid=${sessionId}');
+                        window.location.replace("${TARGET_URL}");
                     }
                 });
 
