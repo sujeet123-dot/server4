@@ -12,8 +12,8 @@ const gaClient = axios.create({
     timeout: 10000
 });
 
-const TARGET_URL = "https://www.sujeetkumar.space/?utm_source=google&utm_medium=medium&utm_campaign=AK42&utm_id=Visit_frame";
-const MEASUREMENT_ID = "G-18QHNCNQYW";
+const TARGET_URL = "https://www.zenithummedia.com/case-studies?utm_source=google&utm_medium=medium&utm_campaign=AK42&utm_id=Visit_frame";
+const MEASUREMENT_ID = "G-SNCY0K36MC";
 
 
 async function runServerSideTracking(ids) {
