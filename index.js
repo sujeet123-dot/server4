@@ -59,7 +59,7 @@ async function sendPing(ids, eventName, extraParams = {}) {
         en: eventName,
         cs: 'google',
         cm: 'medium',
-        cn: 'AK41',
+        cn: 'AK42',
         seg: '1', 
         _dbg: '1', 
         ...extraParams
