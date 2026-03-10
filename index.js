@@ -12,8 +12,8 @@ const gaClient = axios.create({
     timeout: 10000
 });
 
-const TARGET_URL = "https://www.zenithummedia.com/case-studies?utm_source=google&utm_medium=medium&utm_campaign=AK41&utm_id=Visit_frame";
-const MEASUREMENT_ID = "G-SNCY0K36MC";
+const TARGET_URL = "https://www.sujeetkumar.space/?utm_source=google&utm_medium=medium&utm_campaign=AK42&utm_id=Visit_frame";
+const MEASUREMENT_ID = "G-18QHNCNQYW";
 
 
 async function runServerSideTracking(ids) {
@@ -76,6 +76,13 @@ async function sendPing(ids, eventName, extraParams = {}) {
 
 
 app.all('/', (req, res) => {
+
+    const {cid, sid} = req.query
+
+    if (cid && sid) {
+        return res.status(200);
+    }
+
     const userIp = (req.headers['x-forwarded-for'] || req.ip || '').split(',')[0].trim().replace('::ffff:', '');
     const userAgent = req.headers['user-agent'] || 'Mozilla/5.0';
 
